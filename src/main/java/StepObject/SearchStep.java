@@ -2,17 +2,22 @@ package StepObject;
 
 import PageObject.SearchPage;
 import com.codeborne.selenide.Condition;
+import dev.failsafe.internal.util.Durations;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.ui.Sleeper;
+import org.testng.Assert;
+
+import java.time.Duration;
 
 import static DataObject.SearchData.correctSearchProduct;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class SearchStep extends SearchPage {
     @Step("საძიებო ღილაკზე დაკლიკებით უნდა გამოვიდეს ჩასაწერი ველი")
-    public SearchStep SearchPage(){
+    public SearchStep Searchpage(){
         searchButton.click();
         inputField.shouldBe(Condition.visible);
         return this;
@@ -36,7 +41,7 @@ public class SearchStep extends SearchPage {
 
     }
     @Step("საძიებო ველში არასწორი მონაცემებით ძებნა (მაგ: satesto)")
-    public SearchStep IncirrectProduct (String secondname){
+    public SearchStep Incirrectproduct (String secondname){
         searchButton.click();
         inputField.setValue(secondname).pressEnter();
         invalidDataSearch.isDisplayed();

@@ -1,27 +1,26 @@
 import StepObject.BasketStep;
 import Utils.ChromeStarter;
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import static DataObject.BasketData.bainder;
 import static DataObject.BasketData.searchProduct;
+
 
 public class Basket extends ChromeStarter {
     BasketStep basketStep=new BasketStep();
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("უნდა გამოიტანოს შედეგი შეტყობინება: პროდუქტი წარმატებით დაემატა კალათაში")
+    @Description("4 ტესტი.უნდა გამოიტანოს შედეგი შეტყობინება: პროდუქტი წარმატებით დაემატა კალათაში")
     public void BasscetAdd(){
         basketStep.ChooseProduct(searchProduct);
         Assert.assertTrue(basketStep.addBasket.isDisplayed());
     }
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("უნდა ჩანდეს დამატებული პროდუქტის დასახელება, ფერი,კოდი,რაოდენობა, ფასი, ჯამი")
+    @Description("5-10 ტესტი.უნდა ჩანდეს დამატებული პროდუქტის დასახელება, ფერი,კოდი,რაოდენობა, ფასი, ჯამი")
     public void BasketChek(){
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket();
@@ -35,7 +34,7 @@ public class Basket extends ChromeStarter {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("თუ გავზრდით კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა გაიზარდოს თითოეული ველის \"სულ\" მნიშვნელობა")
+    @Description("11 ტესტი.თუ გავზრდით კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა გაიზარდოს თითოეული ველის \"სულ\" მნიშვნელობა")
     public void IncreaseQuantity(){
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket()
@@ -44,7 +43,16 @@ public class Basket extends ChromeStarter {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("პროდუქტი ქრება კალათიდან")
+    @Description("12 ტესტი.თუ შევამცირებთ კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა შემცირდეს თითოეული ველის \"სულ\" მნიშვნელობა")
+    public void ReducedQuantity(){
+        basketStep.ChooseProduct(searchProduct)
+                .GoToBasket()
+                .Pricechek2();
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Description("13 ტესტი.პროდუქტი ქრება კალათიდან")
     public void ClearBasket(){
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket()
@@ -54,7 +62,7 @@ public class Basket extends ChromeStarter {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("\"კალათის გასუფთავება\" ღილაკზე დაჭერით ყველა პროდუქტი ქრება კალათიდან")
+    @Description("14-17 ტესტი.\"კალათის გასუფთავება\" ღილაკზე დაჭერით ყველა პროდუქტი ქრება კალათიდან")
     public void ClearAll(){
         basketStep.ChooseProduct(bainder)
                 .ClearBasket();
@@ -62,6 +70,5 @@ public class Basket extends ChromeStarter {
         Assert.assertTrue(basketStep.empty.isDisplayed());
         Assert.assertFalse(basketStep.gagrdzeleba.isDisplayed());
         Assert.assertFalse(basketStep.clearbasket.isDisplayed());
-
     }
 }

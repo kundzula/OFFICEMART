@@ -5,10 +5,6 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
-
-import java.time.Duration;
-
 import static DataObject.SearchData.correctSearchProduct;
 import static DataObject.SearchData.incorrectSearchProduct;
 
@@ -17,15 +13,15 @@ public class Search extends ChromeStarter {
     SearchStep searchStep=new SearchStep();
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("გამოდის ჩასაწერი ველი")
+    @Description("1 ტესტი. გამოდის ჩასაწერი ველი")
     public void SearchButton(){
-        searchStep.SearchPage();
+        searchStep.Searchpage();
         Assert.assertTrue(searchStep.inputField.isDisplayed());
 
     }
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("დაბრუნებული მონაცემების სახელებში უნდა იყოს ძებნისას გადაცემული სიტყვა")
+    @Description("2 ტესტი. დაბრუნებული მონაცემების სახელებში უნდა იყოს ძებნისას გადაცემული სიტყვა")
       public void SortByName(){
         searchStep.CorrectProduct(correctSearchProduct);
         Assert.assertTrue(searchStep.sortByName.isDisplayed());
@@ -34,9 +30,9 @@ public class Search extends ChromeStarter {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @Description("უნდა გამოიტანოს შედეგი ტექსტით: საძიებო სიტყვა satesto ვერაფერი მოიძებნა")
+    @Description("3 ტესტი.უნდა გამოიტანოს შედეგი ტექსტით: საძიებო სიტყვა satesto ვერაფერი მოიძებნა")
     public void IncorrectName(){
-        searchStep.IncirrectProduct(incorrectSearchProduct);
+        searchStep.Incirrectproduct(incorrectSearchProduct);
         Assert.assertFalse(searchStep.invalidDataSearch.isDisplayed());
 
     }

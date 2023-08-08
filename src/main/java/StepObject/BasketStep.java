@@ -3,8 +3,11 @@ package StepObject;
 import PageObject.BasketPage;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
+import org.testng.Assert;
 
 import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class BasketStep extends BasketPage {
     @Step("კონკრეტული პროდუქტის კალათაში დამატების ღილაკზე დაჭერა")
@@ -26,8 +29,42 @@ public class BasketStep extends BasketPage {
     @Step("თუ გავზრდით კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა გაიზარდოს თითოეული ველის \"სულ\" მნიშვნელობა")
     public BasketStep Pricechek1(){
         increasenumber.click();
-        System.out.println(price);
-        System.out.println(bowl);
+        String count1=quantity.getValue();
+        String price1=price.getText().replaceAll("A","");
+        String bowl1=bowl.getText();
+        int count2=Integer.parseInt(count1);
+        float price2=Float.parseFloat(price1);
+        float bowl2=Float.parseFloat(bowl1);
+        System.out.println(count2);
+        System.out.println(price2);
+        System.out.println(bowl2);
+        if (bowl2==count2*price2){
+            System.out.println(true);
+        }else {
+            System.out.println(false);
+        }
+        Assert.assertTrue(bowl2==count2*price2);
+        return this;
+    }
+
+    @Step("თუ შევამცირებთ კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა შემცირდეს თითოეული ველის \"სულ\" მნიშვნელობა")
+    public BasketStep Pricechek2(){
+        decreasenumber.click();
+        String count1=quantity.getValue();
+        String price1=price.getText().replaceAll("A","");
+        String bowl1=bowl.getText();
+        int count2=Integer.parseInt(count1);
+        float price2=Float.parseFloat(price1);
+        float bowl2=Float.parseFloat(bowl1);
+        System.out.println(count2);
+        System.out.println(price2);
+        System.out.println(bowl2);
+        if (bowl2==count2*price2){
+            System.out.println(true);
+        }else {
+            System.out.println(false);
+        }
+        Assert.assertTrue(bowl2==count2*price2);
         return this;
     }
     @Step("შესაძლებელი უნდა იყოს კალათაში არსებული კონკრეტული პროდუქტის წაშლა, \"X\" ღილაკზე დაჭერით")
@@ -50,7 +87,6 @@ public class BasketStep extends BasketPage {
     @Step("კალათაში პროდუქტის დამატების შემდეგ გაგრძელება ღილაკზე დაჭერა")
     public BasketStep Continiu(){
         gagrdzeleba.click();
-
         return this;
     }
 }

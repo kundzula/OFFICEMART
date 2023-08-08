@@ -8,19 +8,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class SearchPage {
-
-    public SelenideElement
+     public SelenideElement
      searchButton=$(byClassName("fas"),1),
      inputField=$(byClassName("form_group")).$(byName("search")),
      sortByName=$(byClassName("prod_title")).$(withText("კალამი ბურთულიანი")),
-    invalidDataSearch=$(byClassName("color_text")).$(byText("ვერაფერი მოიძებნა"));
-
-
-
-
-    public ElementsCollection
-
-            productCountSize=$$(byClassName("item"));
-
-
+     invalidDataSearch=$(byClassName("color_text")).$(byText("ვერაფერი მოიძებნა"));
+     public ElementsCollection
+             productCountSize=$$(byClassName("item"));
 }
