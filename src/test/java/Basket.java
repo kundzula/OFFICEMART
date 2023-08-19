@@ -5,23 +5,26 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import static DataObject.BasketData.bainder;
 import static DataObject.BasketData.searchProduct;
 
 
 public class Basket extends ChromeStarter {
-    BasketStep basketStep=new BasketStep();
+    BasketStep basketStep = new BasketStep();
+
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("4 ტესტი.უნდა გამოიტანოს შედეგი შეტყობინება: პროდუქტი წარმატებით დაემატა კალათაში")
-    public void BasscetAdd(){
+    public void BasscetAdd() {
         basketStep.ChooseProduct(searchProduct);
         Assert.assertTrue(basketStep.addBasket.isDisplayed());
     }
+
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("5-10 ტესტი.უნდა ჩანდეს დამატებული პროდუქტის დასახელება, ფერი,კოდი,რაოდენობა, ფასი, ჯამი")
-    public void BasketChek(){
+    public void BasketChek() {
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket();
         Assert.assertTrue(basketStep.correctproduct.isDisplayed());
@@ -35,7 +38,7 @@ public class Basket extends ChromeStarter {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("11 ტესტი.თუ გავზრდით კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა გაიზარდოს თითოეული ველის \"სულ\" მნიშვნელობა")
-    public void IncreaseQuantity(){
+    public void IncreaseQuantity() {
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket()
                 .Pricechek1();
@@ -44,7 +47,7 @@ public class Basket extends ChromeStarter {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("12 ტესტი.თუ შევამცირებთ კალათაში არსებული პროუქტის რაოდენობას პროპორციულად უნდა შემცირდეს თითოეული ველის \"სულ\" მნიშვნელობა")
-    public void ReducedQuantity(){
+    public void ReducedQuantity() {
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket()
                 .Pricechek2();
@@ -53,7 +56,7 @@ public class Basket extends ChromeStarter {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("13 ტესტი.პროდუქტი ქრება კალათიდან")
-    public void ClearBasket(){
+    public void ClearBasket() {
         basketStep.ChooseProduct(searchProduct)
                 .GoToBasket()
                 .EmptyBasket();
@@ -63,7 +66,7 @@ public class Basket extends ChromeStarter {
     @Test
     @Severity(SeverityLevel.NORMAL)
     @Description("14-17 ტესტი.\"კალათის გასუფთავება\" ღილაკზე დაჭერით ყველა პროდუქტი ქრება კალათიდან")
-    public void ClearAll(){
+    public void ClearAll() {
         basketStep.ChooseProduct(bainder)
                 .ClearBasket();
         Assert.assertFalse(basketStep.dasaxeleba.isDisplayed());

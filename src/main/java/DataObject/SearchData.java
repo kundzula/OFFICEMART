@@ -2,11 +2,8 @@ package DataObject;
 
 public interface SearchData {
     String
-    correctSearchProduct="კალამი ბურთულიანი",
-    incorrectSearchProduct="satesto";
-
-
-
+            correctSearchProduct = "კალამი ბურთულიანი",
+            incorrectSearchProduct = "satesto";
 
 
 }
