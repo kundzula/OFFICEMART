@@ -1,15 +1,18 @@
 # PROJECT TITLE
 ## OFFICEMART.GE
+![Example screenshot](./img/screenshot.png)
 # About
 This is a test of the new site, checking its full functionality.
-# Use the Project
 ## Table of Contents
+> Before opening the project, you must have the following programs downloaded to your computer
 * [Java](#java)
 * [Maven](#maven)
 * [Allure](#allure)
 * [IntelijIdea](#intelijidea)
 * [Git Bash](#git-bash)
+> You should write 
 * [Dependencies](#dependencies)
+> For open project
 * [Open project](#git-clone)
 ## Java
 - (https://www.oracle.com/java/technologies/downloads/#jdk20-windows)
