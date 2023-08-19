@@ -19,4 +19,5 @@ This is a test of the new site, checking its full functionality.
 - (https://www.jetbrains.com/idea/download/?section=windows)
 ## Git Bash
 - (https://git-scm.com/downloads)
-## 
+## Dependenciens
+
