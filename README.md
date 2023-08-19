@@ -1,6 +1,6 @@
 # PROJECT TITLE
 ## OFFICEMART.GE
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./image.png)
 # About
 This is a test of the new site, checking its full functionality.
 ## Table of Contents
