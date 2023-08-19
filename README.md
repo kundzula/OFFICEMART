@@ -112,5 +112,6 @@ This is a test of the new site, checking its full functionality.
 </project>
 
 ## Git Clone
--Clone the repository
--
+- Clone the repository
+- https://github.com/kundzula/OFFICEMART.git
+- After you clone this repo to your desktop
