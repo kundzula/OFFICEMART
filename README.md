@@ -6,21 +6,17 @@ This is a test of the new site, checking its full functionality.
 ## The following programs must be installed and running on your device
 * [Java](#java)
 * [Maven](#maven)
-* Allure
-* IntelijIdea
-* Git Bash
-
+* [Allure](#allure)
+* [IntelijIdea](#intelijidea)
+* [Git Bash](#git-bash)
 ## Java
-- version - IntelliJ IDEA Community Edition 2023.1
-
+- (https://www.oracle.com/java/technologies/downloads/#jdk20-windows)
 ## Maven
-- version - 
-
+- (https://maven.apache.org/download.cgi)
 ## Allure
-- https://docs.qameta.io/allure
-
+- (https://docs.qameta.io/allure)
 ## IntelijIdea
-- https://www.jetbrains.com/idea/download/?section=windows
-
+- (https://www.jetbrains.com/idea/download/?section=windows)
 ## Git Bash
-- https://git-scm.com/downloads
+- (https://git-scm.com/downloads)
+## 
